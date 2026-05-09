@@ -1,7 +1,6 @@
 # Career-Ops Profile Configuration
 # Copy this file to config/profile.yml and fill in your details.
 # This is the single source of truth for your personal data across all modes.
-
 candidate:
   full_name: "Osama Khalid"
   email: "khalid.osama92@gmail.com"
@@ -15,24 +14,25 @@ candidate:
   # Find it in your Canva design URL: https://www.canva.com/design/DAxxxxxxx/...
   # The ID starts with "D" and is 11 characters long.
   # canva_resume_design_id: "DAxxxxxxxxx"
-
 target_roles:
   # Your North Star roles — what you're optimizing for
   primary:
     - "Senior Embedded Software Engineer"
     - "Robotics Software Engineer"
+    - "Senior Firmware Engineer"
+    - "Firmware Engineer"
+    - "Embedded Software Engineer"
   # Archetypes help the evaluation system score fit
   archetypes:
     - name: "Senior Embedded Software Engineer"
       level: "Senior/Staff"
-      fit: "primary"        # primary = dream role, secondary = good fit, adjacent = stretch
+      fit: "primary" # primary = dream role, secondary = good fit, adjacent = stretch
     - name: "Robotics Software Engineer"
       level: "Senior"
       fit: "secondary"
     - name: "DevOps Engineer"
       level: "Mid-Senior"
       fit: "adjacent"
-
 narrative:
   # Your professional headline (1 line)
   headline: "Senior Embedded Firmware Engineer | Defence-Grade Real-Time Systems | C/C++ | FPGA/Zynq"
@@ -48,29 +48,27 @@ narrative:
   # Proof points — projects, articles, case studies with measurable impact
   proof_points:
     - name: "Thermal Scope CI/CD Pipeline"
-      url: 
+      url:
       hero_metric: "Automated PIC32 builds with Docker + GitHub Actions + Cppcheck — zero manual intervention from commit to artifact"
     - name: "IoT Device Provisioning Automation"
-      url: 
+      url:
       hero_metric: "Cut setup time for 100+ devices from 5 hours to 10 minutes using Boto3"
     - name: "Upwork Freelance Track Record"
       url: "https://www.upwork.com/freelancers/sosamakhalid"
       hero_metric: "Top Rated, 100% Job Success Score — embedded firmware and hardware design"
   # Optional: dashboard/demo URL with credentials
   # dashboard:
-  #   url: "https://janesmith.dev/demo"
-  #   password: "demo-2026"
-
+  # url: "https://janesmith.dev/demo"
+  # password: "demo-2026"
 compensation:
-  target_range: "€60K-80K"     # Your target total comp
-  currency: "EUR"
-  minimum: "€55K"               # Walk-away number
-  location_flexibility: "Remote preferred, 1 week/month on-site possible"
-
+  target_range: "SGD 100K-130K" # Updated for Singapore market (Senior Embedded/Robotics roles)
+  currency: "SGD"
+  minimum: "SGD 90K" # Walk-away number
+  location_flexibility: "on site preferred, relocation support"
 location:
-  country: "Netherlands"
-  city: "Eindhoven"
-  timezone: "CET"
-  visa_status: "Visa Sponsorship needed (Kennismigrant eligible)"
+  country: "Singapore"
+  city: "Singapore"
+  timezone: "SGT"
+  visa_status: "Visa Sponsorship needed (Employment Pass eligible)"
   # For remote roles outside your country:
   # onsite_availability: "1 week/month in any city"

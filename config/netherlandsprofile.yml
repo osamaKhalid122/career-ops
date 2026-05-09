@@ -65,7 +65,7 @@ compensation:
   target_range: "€60K-80K"     # Your target total comp
   currency: "EUR"
   minimum: "€55K"               # Walk-away number
-  location_flexibility: "Remote preferred, 1 week/month on-site possible"
+  location_flexibility: "on site preferred, relocation support"
 
 location:
   country: "Netherlands"

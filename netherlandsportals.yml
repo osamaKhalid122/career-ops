@@ -1,0 +1,485 @@
+# Portal Scanner Configuration
+# Tailored for: Osama Khalid — Senior Embedded Firmware Engineer
+# Target: Netherlands / Europe — Defence, Semiconductor, Embedded Systems
+#
+# Strategy (3 levels):
+#   1. Playwright → careers_url of each company (real-time, reliable)
+#   2. Greenhouse API → structured JSON (fast, Greenhouse-only)
+#   3. WebSearch with site: filters (broad discovery, may be stale)
+
+# -- Title filter --
+title_filter:
+  positive:
+    # -- Core embedded/firmware roles --
+    - "Embedded"
+    - "Firmware"
+    - "FPGA"
+    - "RTOS"
+    - "Real-Time"
+    - "Real Time"
+    - "Bare Metal"
+    - "Microcontroller"
+    - "MCU"
+    - "SoC"
+    - "Zynq"
+    - "ARM"
+    - "Cortex"
+    # -- C/C++ software engineering --
+    - "C++ Engineer"
+    - "C++ Developer"
+    - "C++ Software"
+    - "Software Engineer C++"
+    - "Systems Engineer"
+    - "Systems Software"
+    - "Platform Engineer"
+    # -- Hardware-adjacent --
+    - "Hardware Engineer"
+    - "Electronics Engineer"
+    - "PCB"
+    - "BSP"
+    - "Board Support"
+    - "Device Driver"
+    - "Linux Driver"
+    - "Embedded Linux"
+    # -- Defence / optronics --
+    - "Defence"
+    - "Defense"
+    - "Naval"
+    - "Radar"
+    - "Sensor"
+    - "Optronics"
+    - "Electro-Optical"
+    - "EO/IR"
+    - "Thermal"
+    - "Surveillance"
+    - "Fire Control"
+    - "Command System"
+    # -- Semiconductor / chip --
+    - "Semiconductor"
+    - "Lithography"
+    - "Wafer"
+    - "IC Design"
+    - "Chip"
+    - "Silicon"
+    # -- CI/CD and tooling for embedded --
+    - "Build Engineer"
+    - "DevOps Embedded"
+    - "Test Engineer"
+    - "Verification Engineer"
+    - "Validation Engineer"
+    # -- Robotics --
+    - "Robotics"
+    - "ROS"
+    - "Robot Software"
+    - "Motion Control"
+    - "Controls Engineer"
+    # -- German keywords (for DACH market) --
+    - "Softwareentwickler"
+    - "Entwicklungsingenieur"
+    - "Systemingenieur"
+    - "Regelungstechnik"
+  negative:
+    # Roles to exclude
+    - "Intern"
+    - "Werkstudent"
+    - "Trainee"
+    - "Web Developer"
+    - "Frontend"
+    - "React"
+    - "Angular"
+    - "iOS"
+    - "Android"
+    - "PHP"
+    - "Ruby"
+    - "Salesforce Admin"
+    - "SAP "
+    - "Oracle EBS"
+    - "Mainframe"
+    - "COBOL"
+    - "Blockchain"
+    - "Web3"
+    - "Crypto"
+    - "UX Designer"
+    - "UI Designer"
+    - "Marketing"
+    - "Content Writer"
+  seniority_boost:
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Head"
+    - "Sr."
+    - "Sr "
+
+# -- Search queries --
+search_queries:
+
+  # ══════════ Netherlands — Embedded/Firmware ══════════
+
+  - name: LinkedIn NL — Embedded Firmware
+    query: 'site:linkedin.com/jobs "Embedded" OR "Firmware" "Engineer" Netherlands'
+    enabled: true
+
+  - name: LinkedIn NL — C++ Real-Time
+    query: 'site:linkedin.com/jobs "C++" "Real-Time" OR "RTOS" OR "FreeRTOS" Netherlands'
+    enabled: true
+
+  - name: LinkedIn NL — FPGA Zynq
+    query: 'site:linkedin.com/jobs "FPGA" OR "Zynq" OR "Vivado" OR "VHDL" Netherlands'
+    enabled: true
+
+  - name: Indeed NL — Embedded Engineer
+    query: 'site:indeed.nl "Embedded Software Engineer" OR "Firmware Engineer" OR "C++ Engineer"'
+    enabled: true
+
+  - name: Indeed NL — Defence Systems
+    query: 'site:indeed.nl "Defence" OR "Defense" "Software Engineer" OR "Systems Engineer"'
+    enabled: true
+
+  # ══════════ Netherlands — Defence Sector ══════════
+
+  - name: Thales NL — All Engineering
+    query: 'site:careers.thalesgroup.com Netherlands "Engineer" OR "Software" OR "C++"'
+    enabled: true
+
+  - name: Thales NL — Defence Systems
+    query: 'site:careers.thalesgroup.com Hengelo OR Netherlands "Embedded" OR "Firmware" OR "FPGA" OR "Radar" OR "Naval"'
+    enabled: true
+
+  # ══════════ Netherlands — Semiconductor ══════════
+
+  - name: ASML — All Engineering
+    query: 'site:asml.com/careers "Embedded" OR "Firmware" OR "C++" OR "Software Engineer" OR "FPGA"'
+    enabled: true
+
+  - name: NXP — Embedded Roles
+    query: 'site:nxp.com/company/about-nxp/careers "Embedded" OR "Firmware" OR "C++" OR "MCU"'
+    enabled: true
+
+  # ══════════ Brainport Eindhoven Ecosystem ══════════
+
+  - name: Brainport — Embedded Engineer
+    query: '"Embedded Software Engineer" OR "Firmware Engineer" Eindhoven OR Veldhoven OR Best Netherlands'
+    enabled: true
+
+  - name: Brainport — FPGA Engineer
+    query: '"FPGA Engineer" OR "FPGA Developer" Eindhoven OR Veldhoven Netherlands'
+    enabled: true
+
+  - name: Prodrive — All Roles
+    query: 'site:prodrive-technologies.com/careers "Embedded" OR "Firmware" OR "FPGA" OR "Electronics"'
+    enabled: true
+
+  # ══════════ Netherlands Job Portals ══════════
+
+  - name: IamExpat — Embedded/Firmware
+    query: 'site:iamexpat.nl "Embedded" OR "Firmware" OR "C++" OR "FPGA" Netherlands'
+    enabled: true
+
+  - name: Welcome to NL — Engineering
+    query: 'site:welcome-to-nl.nl/jobs "Embedded" OR "Firmware" OR "Electronics" OR "C++"'
+    enabled: true
+
+  - name: Undutchables — Engineering
+    query: 'site:undutchables.nl "Embedded" OR "Engineer" OR "C++" OR "Electronics"'
+    enabled: true
+
+  # ══════════ Greenhouse/Ashby — Europe Embedded ══════════
+
+  - name: Greenhouse — Embedded Europe
+    query: 'site:boards.greenhouse.io OR site:job-boards.greenhouse.io "Embedded" OR "Firmware" OR "FPGA" Europe OR Netherlands OR Germany'
+    enabled: true
+
+  - name: Ashby — Embedded Europe
+    query: 'site:jobs.ashbyhq.com "Embedded" OR "Firmware" OR "FPGA" OR "Real-Time" Europe OR Netherlands OR Germany'
+    enabled: true
+
+  - name: Lever — Embedded Europe
+    query: 'site:jobs.lever.co "Embedded" OR "Firmware" OR "C++" OR "Real-Time" Europe OR Netherlands OR Germany'
+    enabled: true
+
+  # ══════════ European Defence — Broader ══════════
+
+  - name: HENSOLDT — All Roles
+    query: 'site:hensoldt.net/career "Embedded" OR "Firmware" OR "Software" OR "FPGA" OR "Sensor"'
+    enabled: true
+
+  - name: Rheinmetall — Engineering
+    query: 'site:rheinmetall.com/career "Embedded" OR "Software Engineer" OR "C++" OR "Defence"'
+    enabled: true
+
+  - name: Saab — Engineering
+    query: 'site:saab.com/career "Embedded" OR "Firmware" OR "Software Engineer" OR "Radar" Netherlands OR Europe'
+    enabled: true
+
+  - name: Leonardo — Engineering
+    query: 'site:leonardocompany.com/careers "Embedded" OR "Software" OR "EO" OR "IR" OR "Optronics"'
+    enabled: true
+
+  # ══════════ Germany — Semiconductor & Embedded ══════════
+
+  - name: Infineon — Embedded
+    query: 'site:infineon.com/careers "Embedded" OR "Firmware" OR "MCU" OR "FPGA"'
+    enabled: true
+
+  - name: STMicroelectronics — Firmware
+    query: '"STMicroelectronics" careers "Embedded" OR "Firmware" OR "MCU" Netherlands OR Germany OR France'
+    enabled: true
+
+  - name: Bosch — Embedded Systems
+    query: 'site:bosch.com/careers "Embedded Software" OR "Firmware" OR "C++" OR "FPGA" Germany OR Netherlands'
+    enabled: true
+
+  # ══════════ Robotics — Europe ══════════
+
+  - name: Robotics NL — All
+    query: '"Robotics Software Engineer" OR "ROS2" OR "Robot Software" Netherlands OR Eindhoven OR Delft'
+    enabled: true
+
+  - name: Lely — Robotics NL
+    query: 'site:lely.com/careers "Software" OR "Embedded" OR "Robotics"'
+    enabled: true
+
+  # ══════════ Remote EU — Embedded ══════════
+
+  - name: RemoteOK — Embedded
+    query: 'site:remoteok.com "Embedded" OR "Firmware" OR "C++" OR "FPGA" OR "Real-Time"'
+    enabled: true
+
+  - name: EURES — Embedded NL
+    query: 'site:eures.europa.eu "Embedded" OR "Firmware" OR "Electronics" Netherlands'
+    enabled: true
+
+
+# -- Tracked companies --
+# Companies whose career pages are checked directly.
+
+tracked_companies:
+
+  # ══════════ NETHERLANDS — Defence ══════════
+
+  - name: Thales Nederland
+    careers_url: https://careers.thalesgroup.com/global/en/search-results?keywords=&location=Netherlands
+    scan_method: websearch
+    scan_query: 'site:careers.thalesgroup.com Netherlands "Engineer" OR "Software" OR "Embedded"'
+    notes: "Hengelo NL. Naval defence systems, TACTICOS, FuWES, radar. Primary target."
+    enabled: true
+
+  - name: Thales Hengelo — Direct
+    careers_url: https://careers.thalesgroup.com/global/en/search-results?keywords=&location=Hengelo
+    scan_method: websearch
+    scan_query: 'site:careers.thalesgroup.com Hengelo "C++" OR "Embedded" OR "Software" OR "FPGA"'
+    notes: "Hengelo site specifically. F126 FuWES program."
+    enabled: true
+
+  # ══════════ NETHERLANDS — Semiconductor ══════════
+
+  - name: ASML
+    careers_url: https://www.asml.com/en/careers/find-your-job
+    scan_method: websearch
+    scan_query: 'site:asml.com/careers "Embedded" OR "Firmware" OR "C++" OR "Software Engineer" OR "FPGA"'
+    notes: "Veldhoven NL. World leader in lithography. Massive embedded/firmware hiring."
+    enabled: true
+
+  - name: NXP Semiconductors
+    careers_url: https://nxp.com/company/about-nxp/careers
+    scan_method: websearch
+    scan_query: 'site:nxp.com/careers OR "NXP" "Embedded" OR "Firmware" OR "MCU" Netherlands'
+    notes: "Eindhoven/Nijmegen NL. MCU/MPU firmware, automotive embedded."
+    enabled: true
+
+  - name: Nexperia
+    careers_url: https://www.nexperia.com/careers
+    scan_method: websearch
+    scan_query: 'site:nexperia.com/careers "Engineer" OR "Embedded" OR "Software"'
+    notes: "Nijmegen NL. Semiconductor discrete components."
+    enabled: true
+
+  # ══════════ NETHERLANDS — High-Tech Systems ══════════
+
+  - name: Philips
+    careers_url: https://www.careers.philips.com/global/en
+    scan_method: websearch
+    scan_query: 'site:careers.philips.com "Embedded" OR "Firmware" OR "C++" OR "Software" Netherlands OR Best OR Eindhoven'
+    notes: "Best/Eindhoven NL. Medical device firmware, embedded Linux."
+    enabled: true
+
+  - name: Prodrive Technologies
+    careers_url: https://prodrive-technologies.com/careers/
+    scan_method: websearch
+    scan_query: 'site:prodrive-technologies.com/careers "Embedded" OR "Firmware" OR "FPGA" OR "Electronics"'
+    notes: "Son NL (near Eindhoven). High-tech electronics, ASML supplier."
+    enabled: true
+
+  - name: Demcon
+    careers_url: https://demcon.com/careers/
+    scan_method: websearch
+    scan_query: 'site:demcon.com/careers "Embedded" OR "Software" OR "Systems"'
+    notes: "Enschede/Best NL. High-tech systems, mechatronics, embedded."
+    enabled: true
+
+  - name: VDL Group
+    careers_url: https://www.vdlgroep.com/en/careers
+    scan_method: websearch
+    scan_query: 'site:vdlgroep.com "Embedded" OR "Software" OR "Electronics" OR "Defence"'
+    notes: "Eindhoven NL. Defence vehicles, high-tech systems."
+    enabled: true
+
+  - name: Thermo Fisher Scientific
+    careers_url: https://jobs.thermofisher.com
+    scan_method: websearch
+    scan_query: 'site:jobs.thermofisher.com "Embedded" OR "Firmware" OR "C++" Eindhoven OR Netherlands'
+    notes: "Eindhoven NL. Electron microscopy, scientific instruments firmware."
+    enabled: true
+
+  - name: Mapper Lithography
+    careers_url: https://www.sioux.eu/careers
+    scan_method: websearch
+    scan_query: '"Sioux Technologies" "Embedded" OR "Firmware" OR "FPGA" Eindhoven'
+    notes: "Eindhoven NL. Engineering services for high-tech, ASML ecosystem."
+    enabled: true
+
+  - name: TMC
+    careers_url: https://www.tmc.nl/careers
+    scan_method: websearch
+    scan_query: 'site:tmc.nl "Embedded" OR "Firmware" OR "FPGA" OR "C++" Netherlands'
+    notes: "Eindhoven NL. Technical consulting, places engineers at ASML/NXP/Philips."
+    enabled: true
+
+  - name: Lightyear (Atlas Technologies)
+    careers_url: https://www.atlastechnologies.nl/careers
+    scan_method: websearch
+    scan_query: '"Atlas Technologies" OR "Lightyear" "Embedded" OR "Software" Eindhoven OR Netherlands'
+    notes: "Helmond NL. Solar EV / high-tech automotive embedded."
+    enabled: true
+
+  # ══════════ NETHERLANDS — Defence Adjacent ══════════
+
+  - name: Saab Netherlands
+    careers_url: https://www.saab.com/career
+    scan_method: websearch
+    scan_query: 'site:saab.com/career Netherlands "Software" OR "Embedded" OR "Radar" OR "Sensor"'
+    notes: "Sensor systems, radar. Swedish defence company with NL presence."
+    enabled: true
+
+  - name: Elbit Systems
+    careers_url: https://elbitsystems.com/careers/
+    scan_method: websearch
+    scan_query: '"Elbit Systems" "Embedded" OR "EO" OR "IR" OR "Firmware" Netherlands OR Europe'
+    notes: "Defence EO/IR systems. Presence in Netherlands."
+    enabled: true
+
+  # ══════════ NETHERLANDS — Robotics & Autonomous ══════════
+
+  - name: Lely
+    careers_url: https://www.lely.com/careers/
+    scan_method: websearch
+    scan_query: 'site:lely.com/careers "Software" OR "Embedded" OR "Robotics"'
+    notes: "Maassluis NL. Agricultural robotics, autonomous systems."
+    enabled: true
+
+  - name: Avy
+    careers_url: https://www.avy.eu/careers
+    scan_method: websearch
+    scan_query: '"Avy" drone "Embedded" OR "Software" OR "Engineer" Netherlands'
+    notes: "Amsterdam NL. Medical delivery drones, embedded systems."
+    enabled: true
+
+  # ══════════ GERMANY — Defence ══════════
+
+  - name: HENSOLDT
+    careers_url: https://www.hensoldt.net/career/
+    scan_method: websearch
+    scan_query: 'site:hensoldt.net/career "Embedded" OR "Firmware" OR "Software" OR "FPGA" OR "Sensor" OR "Optronics"'
+    notes: "Ulm/Munich DE. Sensor solutions, defence optronics. Closest match to Shibli."
+    enabled: true
+
+  - name: Rheinmetall
+    careers_url: https://www.rheinmetall.com/en/career
+    scan_method: websearch
+    scan_query: 'site:rheinmetall.com "Embedded" OR "Software Engineer" OR "C++" OR "Defence" OR "Fire Control"'
+    notes: "Dusseldorf DE. Defence electronics, vehicles, weapon systems."
+    enabled: true
+
+  - name: Helsing
+    careers_url: https://job-boards.greenhouse.io/helsing
+    api: https://boards-api.greenhouse.io/v1/boards/helsing/jobs
+    notes: "Munich/Berlin/London/Paris. Defence AI unicorn. Software + ML roles."
+    enabled: true
+
+  - name: Diehl Defence
+    careers_url: https://www.diehl.com/career/
+    scan_method: websearch
+    scan_query: '"Diehl Defence" "Embedded" OR "Software" OR "Firmware" OR "Missile" OR "Sensor"'
+    notes: "Ueberlingen DE. Missile systems, defence sensors."
+    enabled: true
+
+  # ══════════ GERMANY — Semiconductor ══════════
+
+  - name: Infineon
+    careers_url: https://www.infineon.com/careers
+    scan_method: websearch
+    scan_query: 'site:infineon.com/careers "Embedded" OR "Firmware" OR "MCU" OR "FPGA"'
+    notes: "Munich/Dresden DE. Power semis, MCUs, automotive."
+    enabled: true
+
+  - name: Bosch Semiconductors
+    careers_url: https://www.bosch.com/careers/
+    scan_method: websearch
+    scan_query: 'site:bosch.com/careers "Embedded Software" OR "Firmware" OR "FPGA" OR "Sensor"'
+    notes: "Stuttgart/Reutlingen DE. MEMS sensors, automotive embedded."
+    enabled: true
+
+  # ══════════ EUROPE — Defence & Optronics ══════════
+
+  - name: Leonardo
+    careers_url: https://www.leonardocompany.com/en/careers
+    scan_method: websearch
+    scan_query: 'site:leonardocompany.com/careers "Embedded" OR "EO" OR "IR" OR "Optronics" OR "Software"'
+    notes: "Italy/UK. Defence electronics, EO/IR sensors. Strong Shibli overlap."
+    enabled: true
+
+  - name: FLIR / Teledyne
+    careers_url: https://www.teledyne.com/careers
+    scan_method: websearch
+    scan_query: '"Teledyne FLIR" "Embedded" OR "Firmware" OR "Thermal" OR "IR" Netherlands OR Europe'
+    notes: "Thermal imaging, IR sensors. Direct domain match with Shibli."
+    enabled: true
+
+  - name: Safran Electronics
+    careers_url: https://www.safran-group.com/jobs
+    scan_method: websearch
+    scan_query: 'site:safran-group.com/jobs "Embedded" OR "Optronics" OR "EO" OR "IR" OR "Firmware"'
+    notes: "Paris FR. Defence optronics, navigation systems."
+    enabled: true
+
+  - name: Airbus Defence
+    careers_url: https://www.airbus.com/en/careers
+    scan_method: websearch
+    scan_query: 'site:airbus.com/careers "Embedded" OR "Firmware" OR "Software" "Defence" OR "Space" Netherlands OR Germany'
+    notes: "DE/FR/NL. Defence and space systems."
+    enabled: true
+
+  # ══════════ NETHERLANDS — Recruitment Agencies ══════════
+
+  - name: Brunel Netherlands
+    careers_url: https://www.brunel.net/en/jobs
+    scan_method: websearch
+    scan_query: 'site:brunel.net "Embedded" OR "Firmware" OR "FPGA" Netherlands OR Eindhoven'
+    notes: "Major Dutch tech recruiter. Strong ASML/NXP/Philips pipeline."
+    enabled: true
+
+  - name: Yacht (Randstad)
+    careers_url: https://www.yacht.nl/vacatures
+    scan_method: websearch
+    scan_query: 'site:yacht.nl "Embedded" OR "Firmware" OR "C++" OR "FPGA"'
+    notes: "Randstad subsidiary. High-tech embedded placements."
+    enabled: true
+
+  - name: Huxley
+    careers_url: https://www.huxley.com/en-nl/jobs/
+    scan_method: websearch
+    scan_query: 'site:huxley.com "Embedded" OR "Firmware" OR "C++" Netherlands'
+    notes: "Tech recruitment Netherlands."
+    enabled: true
